@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 /.idea
 /.docker/nginx/logs/
+
+/vendor/
+/www/static/
+/www/video/
+/data
+/.env
+/www/upload

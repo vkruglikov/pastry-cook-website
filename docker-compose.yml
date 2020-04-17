@@ -8,17 +8,35 @@ services:
       - "443:443"
     volumes:
       - ./.docker/nginx/hosts:/etc/nginx/conf.d
-      - ./public:/var/www/app
+      - ./:/var/app
       - ./.docker/nginx/logs:/var/log/nginx
     links:
       - php
   mysql:
-    image: mysql:8
-    ports:
-      - "3306:3306"
+    image: mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: secret
-  php:
-    image: php:7.1-fpm
+      MYSQL_DATABASE: main
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
     volumes:
-      - ./public:/var/www/app
+      - db_data:/var/lib/mysql
+  php:
+    build:
+      context: ./.docker/php
+    volumes:
+      - ./:/var/app
+    links:
+      - mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mysql
+
+volumes:
+  db_data:

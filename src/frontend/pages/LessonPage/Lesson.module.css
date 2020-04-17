@@ -1,0 +1,32 @@
+.contentWrapper {
+    min-height: 280px;
+}
+
+.commentWrapper {
+    background: #fff;
+    padding: 0 23px 23px 23px;
+}
+
+.commentWrapper hr {
+    border: none;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.vkButton {
+    background-color: #4a76a8;
+    color: #fff;
+}
+
+.youtubeContainer {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtubeContainer__frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

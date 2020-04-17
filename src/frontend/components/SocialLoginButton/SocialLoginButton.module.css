@@ -1,0 +1,22 @@
+.buttonInnerText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    flex: 1;
+    padding: 0 4px;
+}
+
+.buttonInnerWrapper {
+    display: flex;
+}
+
+.socialIconsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialIconsWrapper svg {
+    padding: 3px;
+}

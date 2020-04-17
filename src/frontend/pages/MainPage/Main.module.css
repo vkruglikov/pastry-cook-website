@@ -1,0 +1,50 @@
+.dashboard {
+    height: 315px;
+    background: url("./dashboard.jpg") center center;
+    background-size: cover;
+    position: relative;
+    font-family: Arial,sans-serif;
+}
+
+.dashboard:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.layout {
+    position: inherit;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mainContent {
+    flex: 1;
+    color: #fff;
+    font-size: 40px;
+    padding: 24px;
+    line-height: 44px;
+}
+
+.cardNote {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.cardNote__count {
+    line-height: 1;
+    font-size: 28px;
+}
+
+.cardNote__name {
+    line-height: 1;
+    font-size: 14px;
+    margin-top: 2px;
+}

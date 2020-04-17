@@ -1,0 +1,8 @@
+.contentWrapper {
+    min-height: 280px;
+}
+
+.commentWrapper {
+    background: #fff;
+    padding: 0 23px 23px 23px;
+}
