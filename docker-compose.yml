@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./.docker/nginx/hosts:/etc/nginx/conf.d
+      - ./public:/var/www/app
+      - ./.docker/nginx/logs:/var/log/nginx
+    links:
+      - php
+  mysql:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+  php:
+    image: php:7.1-fpm
+    volumes:
+      - ./public:/var/www/app
